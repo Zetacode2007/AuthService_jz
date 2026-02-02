@@ -1,13 +1,15 @@
+using System;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 using AuthServiceIN6BV.Application.Interfaces;
- 
+
 namespace AuthServiceIN6BV.Api.Models;
- 
+
 public class FormFileAdapter : IFileData
 {
     private readonly IFormFile _formFile;
- 
     private byte[]? _data;
- 
+
     public FormFileAdapter(IFormFile formFile)
     {
         ArgumentNullException.ThrowIfNull(formFile);
@@ -29,6 +31,8 @@ public class FormFileAdapter : IFileData
     }
 
     public string Content => _formFile.ContentType;
+
     public string FileName => _formFile.FileName;
+
     public long Size => _formFile.Length;
 }
