@@ -56,14 +56,14 @@ public class UserManagementService(IUserRepository users, IRoleRepository roles,
             Role = role.Name,
             Status = user.Status,
             IsEmailVerified = user.UserEmail?.EmailVerified ?? false,
-            CreatedAt = user.CreatedAt,
-            UpdatedAt = user.UpdatedAt
+            CreatedAt = user.CreatedAt
+                 = user.UpdatedAt
         };
     }
 
     public async Task<IReadOnlyList<string>> GetUserRolesAsync(string userId)
     {
-        var roleNames = await roles.GetUserRoleNamesAsync(userId);
+        var roleNames = await roles.GetUserRoleNameAsync(userId);
         return roleNames;
     }
 

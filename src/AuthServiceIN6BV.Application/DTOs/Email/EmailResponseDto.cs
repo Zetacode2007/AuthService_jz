@@ -1,6 +1,6 @@
 namespace AuthServiceIN6BV.Application.DTOs.Email;
 
-public class EmailReponseDto
+public class EmailResponseDto
 {
     public bool Success {get; set;}
     public string Message {get; set;} = string.Empty;

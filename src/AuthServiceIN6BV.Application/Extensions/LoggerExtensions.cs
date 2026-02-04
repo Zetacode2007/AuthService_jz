@@ -9,7 +9,7 @@ public static partial class LoggerExtensions
         EventId = 1001,
         Level = LogLevel.Information,
         Message = "User {Username} registered succesfully.")]
-    public static partial void LogUserRegister(this ILogger loger, string username);
+    public static partial void LogUserRegistered(this ILogger loger, string username);
 
     [LoggerMessage(
         EventId = 1002,

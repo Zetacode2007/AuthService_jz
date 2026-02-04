@@ -170,7 +170,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         return base.SaveChanges();
     }
 
-    public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
+    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         UpdateTimestamps();
         return base.SaveChangesAsync(cancellationToken);
